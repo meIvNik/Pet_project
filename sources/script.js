@@ -20,6 +20,24 @@ $(".scroll").on("click", function () {
   );
 });
 
+$(".btn_first").on("click", function () {
+  $("html, body").animate(
+    {
+      scrollTop: $("#book").offset().top,
+    },
+    1500
+  );
+});
+
+$(".btn_second").on("click", function () {
+  $("html, body").animate(
+    {
+      scrollTop: $("#about").offset().top,
+    },
+    800
+  );
+});
+
 
 if(window.matchMedia('(max-width: 767px)').matches){
 	$(function(){
