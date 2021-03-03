@@ -1,0 +1,193 @@
+@mixin fontBannyBold() {
+  font-family: 'BannyBold', 'Bornywale', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+@mixin fontBannyReg() {
+  font-family: 'BannyReg', 'Bornywale', sans-serif;
+  text-transform: uppercase;
+}
+
+@mixin fontOpenSans() {
+  font-family: 'OpenSans', sans-serif;
+}
+
+@mixin Flex-justify() {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin placeholder() {
+  color: rgba(51, 51, 51, 0.5);
+  letter-spacing: 0.1rem;
+  transition: 0.5s;
+}
+
+@mixin small-nav-menu() {
+  .header {
+  .nav {
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    background-color: rgba(229,229,229, 0.95);
+  
+    &_menu {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        li {
+            padding: 1rem;
+            a {
+              @include fontOpenSans();
+              font-size: 1.4rem;
+              line-height: 1.8rem;
+              text-decoration: none;
+              font-weight: bold;
+              text-transform: uppercase;
+              color: $black-font;
+            }
+            
+        }
+        
+        li:nth-child(4) {
+          margin-right: 0;
+        }
+        li:nth-child(5) {
+          margin-left: 0;
+        }
+    }
+  }
+}
+    nav, .navbar-toggle {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  
+  
+    .nav-hide { 
+      width: 100%;
+      display: none; 
+    }
+  
+  
+    .navbar-toggle {
+      position: fixed;
+      top: 5vh;
+      right: 5vw;
+      width: 4.5rem;
+      height: 4.5rem;
+      z-index: 20;
+      cursor: pointer;
+      display: block;
+    }
+  
+    .bar1,
+    .bar2,
+    .bar3 {
+      width: 100%;
+      height: 0.4rem;
+      margin-bottom: 0.9rem;
+      background-color: rgba(131, 131, 131, 0.95);
+      transition: all 0.5s ease-in-out;
+    }
+  
+    .navbar-on .bar1,
+    .navbar-on .bar2,
+    .navbar-on .bar3 { 
+      background-color:rgba(31, 31, 31, 0.95); 
+    }
+  
+    .navbar-on .bar1 {
+      transform-origin: 10% 40%;
+      transform: rotate(45deg);
+    }
+  
+    .navbar-on .bar3 {
+      transform-origin: 10% 40%;
+      transform: rotate(-45deg);
+    }
+    .navbar-on .bar2 { background-color: transparent; }  
+}
+
+@mixin gallery-hover() {
+  @keyframes hover {
+    50% {
+      transform: translateY(-6px);
+    }
+  
+    100% {
+      transform: translateY(-12px);
+    }
+  }
+  
+  @keyframes hover-shadow {
+    0% {
+      transform: translateY(12px);
+      opacity: .4;
+    }
+  
+    50% {
+      transform: translateY(6px);
+      opacity: 1;
+    }
+  
+  
+    100% {
+      transform: translateY(12px);
+      opacity: .4;
+    }
+  }
+  
+  .gallery_photo {
+    display: inline-block;
+    position: relative;
+    transition-duration: $defaultDuration;
+    transition-property: transform;
+  
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  
+    &:before {
+      pointer-events: none;
+      position: absolute;
+      z-index: -1;
+      content: '';
+      top: 100%;
+      left: 5%;
+      height: 50px;
+      width: 90%;
+      opacity: 0;
+      background: radial-gradient(ellipse at center, rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 80%); /* W3C */
+      transition-duration: $defaultDuration;
+      transition-property: transform opacity;
+    }
+  
+    &:hover {
+      transform: translateY(-12px);
+      animation-name: hover;
+      animation-duration: 1.5s;
+      animation-delay: $defaultDuration;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+  
+      &:before {
+        opacity: .4;
+        transform: translateY(12px);
+        animation-name: hover-shadow;
+        animation-duration: 1.5s;
+        animation-delay: .3s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+    }
+  }
+}

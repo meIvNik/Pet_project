@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "BannyBold";
+  src: url("../../sources/fonts/Banny/Banny-BoldRound.otf");
+}
+@font-face {
+  font-family: "BannyReg";
+  src: url("../../sources/fonts/Banny/Banny-Round.otf");
+}
+@font-face {
+  font-family: "Bornywale";
+  src: url("../../sources/fonts/Bornywale/Bornywale-regular.otf");
+}
+@font-face {
+  font-family: "OpenSans";
+  src: url("../../sources/fonts/Open_Sans/OpenSans-Regular.ttf");
+}
